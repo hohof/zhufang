@@ -26,14 +26,17 @@ const options = {
       show: false,
     },
     axisLine: {
-      // show: false,
-      color: '#3698b4',
+      lineStyle: {
+        color: '#3698b4',
+      },
     },
     z: 10,
   },
   yAxis: {
     axisLine: {
-      // show: false,
+      lineStyle: {
+        color: '#3698b4',
+      },
     },
     axisTick: {
       show: false,
