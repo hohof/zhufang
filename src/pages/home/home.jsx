@@ -5,6 +5,7 @@ import PeopleNumber from '../components/PeopleNumber/PeopleNumber'
 import PeopleFace from '../components/PeopleFace/PeopleFace'
 import AddressTimes from '../components/AddressTimes/AddressTimes'
 import Household from '../components/Household/Household'
+import Gender from '../components/Gender/Gender'
 
 import styles from './home.module.scss'
 
@@ -20,7 +21,12 @@ function Home() {
           <AddressTimes />
           <Household />
         </div>
-        <div className={styles.center} />
+        <div className={styles.center}>
+          <div className={styles.map} />
+          <div className={styles.centerBottom}>
+            <Gender />
+          </div>
+        </div>
         <div className={styles.right} />
       </div>
     </>

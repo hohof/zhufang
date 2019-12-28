@@ -25,5 +25,17 @@
 }
 
 .center {
+  display: flex;
   flex-grow: 1;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.map {
+  flex-grow: 1;
+}
+
+.centerBottom {
+  flex-shrink: 0;
 }
