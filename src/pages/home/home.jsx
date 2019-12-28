@@ -3,6 +3,7 @@ import Header from '../components/Header/Header.jsx'
 import HouseStatistics from '../components/HouseStatistics/HouseStatistics'
 import PeopleNumber from '../components/PeopleNumber/PeopleNumber'
 import PeopleFace from '../components/PeopleFace/PeopleFace.jsx'
+import AddressTimes from '../components/AddressTimes/AddressTimes'
 
 import styles from './home.module.scss'
 
@@ -15,6 +16,7 @@ function Home() {
           <HouseStatistics />
           <PeopleNumber />
           <PeopleFace />
+          <AddressTimes />
         </div>
         <div className={styles.center} />
         <div className={styles.right} />
