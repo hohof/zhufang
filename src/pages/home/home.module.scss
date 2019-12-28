@@ -1,0 +1,22 @@
+.wrapper {
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 100%;
+  display: flex;
+  align-content: stretch;
+}
+
+.left {
+  width: 520px;
+  flex-shrink: 0;
+  border: 1px solid red;
+}
+
+.right {
+  width: 520px;
+  flex-shrink: 0;
+}
+
+.center {
+  flex-grow: 1;
+}
