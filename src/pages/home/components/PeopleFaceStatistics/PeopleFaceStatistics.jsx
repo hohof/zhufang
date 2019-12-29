@@ -8,7 +8,7 @@ import peopleCount from '../../../../assets/PeopleFaceStatistics/people-count.pn
 import unKnow from '../../../../assets/PeopleFaceStatistics/unknow.png'
 import warning from '../../../../assets/PeopleFaceStatistics/warning.png'
 
-function HouseStatistics() {
+function PeopleFaceStatistics() {
   return (
     <div className={styles.wrapper}>
       <SubHeader headerContent="抓拍人脸统计" />
@@ -46,4 +46,4 @@ function HouseStatistics() {
   )
 }
 
-export default HouseStatistics
+export default PeopleFaceStatistics

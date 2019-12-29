@@ -9,6 +9,7 @@ import Gender from './components/Gender/Gender'
 import Age from './components/Age/Age'
 import HomeMap from './components/HomeMap/HomeMap'
 import PeopleFaceStatistics from './components/PeopleFaceStatistics/PeopleFaceStatistics'
+import FaceWall from './components/FaceWall/FaceWall'
 
 import styles from './home.module.scss'
 
@@ -98,6 +99,7 @@ function Home() {
         </div>
         <div className={styles.right}>
           <PeopleFaceStatistics />
+          <FaceWall />
         </div>
       </div>
     </>
