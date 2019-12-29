@@ -8,6 +8,7 @@ import Household from './components/Household/Household'
 import Gender from './components/Gender/Gender'
 import Age from './components/Age/Age'
 import HomeMap from './components/HomeMap/HomeMap'
+import PeopleFaceStatistics from './components/PeopleFaceStatistics/PeopleFaceStatistics'
 
 import styles from './home.module.scss'
 
@@ -95,7 +96,9 @@ function Home() {
             <Gender />
           </div>
         </div>
-        <div className={styles.right} />
+        <div className={styles.right}>
+          <PeopleFaceStatistics />
+        </div>
       </div>
     </>
   )

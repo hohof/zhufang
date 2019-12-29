@@ -1,0 +1,30 @@
+.wrapper {
+}
+
+.header {
+  padding-left: 30px;
+  padding-bottom: 3px;
+  color: #82e9fc;
+  font-size: 16px;
+  line-height: 34px;
+  background-image: url('../../../../assets/sub-title-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding-left: 5px;
+}
+
+.icon {
+  width: 55px;
+  height: 55px;
+  background-image: url('../../../../assets/house/total-count.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
