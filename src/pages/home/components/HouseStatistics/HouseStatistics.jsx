@@ -3,9 +3,9 @@ import SubHeader from '../SubHeader/SubHeader'
 import StatisticCount from '../StatisticCount/StatisticCount'
 
 import styles from './HouseStatistics.module.scss'
-import houseTotal from '../../../assets/house/total-count.png'
-import personTotalCount from '../../../assets/house/person-total-count.png'
-import personReal from '../../../assets/house/person-real.png'
+import houseTotal from '../../../../assets/house/total-count.png'
+import personTotalCount from '../../../../assets/house/person-total-count.png'
+import personReal from '../../../../assets/house/person-real.png'
 
 function HouseStatistics() {
   return (
