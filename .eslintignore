@@ -1,6 +1,7 @@
 node_modules/
 config/
 public/
+src/react-amap/
 
 # Ignore built files except build/index.js
 build/*
