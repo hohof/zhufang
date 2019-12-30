@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "./static/css/main.1ec200ab.chunk.css",
-    "main.js": "./static/js/main.1040d4ae.chunk.js",
-    "main.js.map": "./static/js/main.1040d4ae.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.84a574a4.js",
-    "runtime-main.js.map": "./static/js/runtime-main.84a574a4.js.map",
-    "static/js/2.7e15b080.chunk.js": "./static/js/2.7e15b080.chunk.js",
-    "static/js/2.7e15b080.chunk.js.map": "./static/js/2.7e15b080.chunk.js.map",
-    "index.html": "./index.html",
-    "precache-manifest.2e6318f1b1bc1651c000c27693a91c94.js": "./precache-manifest.2e6318f1b1bc1651c000c27693a91c94.js",
-    "service-worker.js": "./service-worker.js",
-    "static/css/main.1ec200ab.chunk.css.map": "./static/css/main.1ec200ab.chunk.css.map",
-    "static/js/2.7e15b080.chunk.js.LICENSE": "./static/js/2.7e15b080.chunk.js.LICENSE",
-    "static/media/App.css": "./static/media/bg.23f6f5f0.png",
-    "static/media/Header.module.scss": "./static/media/header.8d3b3420.png"
+    "main.css": "./zhufang/static/css/main.8eb0729e.chunk.css",
+    "main.js": "./zhufang/static/js/main.f677fd7b.chunk.js",
+    "main.js.map": "./zhufang/static/js/main.f677fd7b.chunk.js.map",
+    "runtime-main.js": "./zhufang/static/js/runtime-main.bf0cddbb.js",
+    "runtime-main.js.map": "./zhufang/static/js/runtime-main.bf0cddbb.js.map",
+    "static/js/2.7e15b080.chunk.js": "./zhufang/static/js/2.7e15b080.chunk.js",
+    "static/js/2.7e15b080.chunk.js.map": "./zhufang/static/js/2.7e15b080.chunk.js.map",
+    "index.html": "./zhufang/index.html",
+    "precache-manifest.fc18068eabe95be335b10f5b8413cd3b.js": "./zhufang/precache-manifest.fc18068eabe95be335b10f5b8413cd3b.js",
+    "service-worker.js": "./zhufang/service-worker.js",
+    "static/css/main.8eb0729e.chunk.css.map": "./zhufang/static/css/main.8eb0729e.chunk.css.map",
+    "static/js/2.7e15b080.chunk.js.LICENSE": "./zhufang/static/js/2.7e15b080.chunk.js.LICENSE",
+    "static/media/App.css": "./zhufang/static/media/bg.23f6f5f0.png",
+    "static/media/Header.module.scss": "./zhufang/static/media/header.8d3b3420.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.84a574a4.js",
+    "static/js/runtime-main.bf0cddbb.js",
     "static/js/2.7e15b080.chunk.js",
-    "static/css/main.1ec200ab.chunk.css",
-    "static/js/main.1040d4ae.chunk.js"
+    "static/css/main.8eb0729e.chunk.css",
+    "static/js/main.f677fd7b.chunk.js"
   ]
 }
