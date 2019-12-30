@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import { connect } from 'dva';
 import PropTypes from 'prop-types'
-import { Marker, Polyline } from 'react-amap'
+import { Marker, Polyline } from '../../../../react-amap/index'
 import widthMapStatus from '../../../../components/MapWrapper/MapWrapper'
 
 import styles from './HomeMap.module.scss'
@@ -24,40 +24,37 @@ const cameraPositionList = [
 ]
 
 const config = {
-  viewMode: '3D',
-  pitch: 0,
-  maxPitch: 0,
-  zoom: 7,
-  showIndoorMap: false,
   events: {
     created: mapInstance => {
       console.log(window.AMap)
-      window.AMap.plugin(['AMap.DistrictSearch'], () => {
+      window.AMap.plugin(['AMap.DistrictSearch', 'AMap.DistrictLayer'], () => {
+        const disProvince = new window.AMap.DistrictLayer.Province({
+          zIndex: 12,
+          adcode: ['350000'],
+          depth: 1,
+          styles: {
+            fill: () => '',
+            'city-stroke': '#008db5', //中国地级市边界
+            'county-stroke': '', //中国区县边界
+          },
+        })
+        console.log(disProvince)
+        disProvince.setMap(mapInstance)
+
         const opts = {
-          subdistrict: 1,
+          subdistrict: 0,
           extensions: 'all',
-          level: 'city',
+          level: 'province',
         }
         //利用行政区查询获取边界构建mask路径
         //也可以直接通过经纬度构建mask路径
         const district = new window.AMap.DistrictSearch(opts)
         district.search('福建省', function(status, result) {
-          console.log(result)
-          const center = result.districtList[0].center
           const bounds = result.districtList[0].boundaries
-          const mask = []
-          for (let i = 0; i < bounds.length; i += 1) {
-            mask.push([bounds[i]])
-          }
-          // mapInstance.mask = mask
-          mapInstance.setCenter(center)
-          // const object3Dlayer = new window.AMap.Object3DLayer({ zIndex: 1 })
-          // mapInstance.add(object3Dlayer)
-          // 添加描边
           for (let i = 0; i < bounds.length; i += 1) {
             new window.AMap.Polyline({
               path: bounds[i],
-              strokeColor: '#009cff',
+              strokeColor: '#008ce7',
               strokeWeight: 4,
               map: mapInstance,
             })
@@ -65,6 +62,11 @@ const config = {
         })
       })
       window.amap = mapInstance
+      const timeId = setTimeout(() => {
+        mapInstance.setFitView()
+        mapInstance.setZoom(7.5)
+        clearTimeout(timeId)
+      }, 500)
     },
   },
 }
@@ -83,8 +85,8 @@ class AMap extends Component {
     return (
       <>
         {cameraPositionList.map(item => (
-          <Marker key={item} __map__={__map__} position={item}>
-            <img src={cameraMap} alt="" />
+          <Marker key={item} __map__={__map__} position={item} anchor="center" offset={[0, 5]}>
+            <img src={cameraMap} alt="" style={{ display: 'block' }} />
           </Marker>
         ))}
       </>
