@@ -1,0 +1,40 @@
+.infoWindowWrapper {
+  width: 489px;
+  height: 152px;
+  padding: 30px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 26px;
+  background-image: url('../../../../assets/infowindow-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateY(-10px);
+}
+
+.cameraAddress {
+  margin: 0;
+  padding-left: 56px;
+  border-bottom: 1px solid #3d4d5a;
+  padding-bottom: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-image: url('../../../../assets/infowindow-camera-address.png');
+  background-size: 30px 26px;
+  background-repeat: no-repeat;
+  background-position: top left 10px;
+}
+
+.coverAddress {
+  padding-left: 56px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-image: url('../../../../assets/infowindow-cover-address.png');
+  background-size: 25px 26px;
+  background-repeat: no-repeat;
+  background-position: top left 10px;
+}

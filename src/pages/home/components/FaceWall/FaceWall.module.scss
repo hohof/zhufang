@@ -1,5 +1,7 @@
 .wrapper {
   margin-top: 10px;
+  flex-shrink: 0;
+  overflow-y: auto;
 }
 
 .header {

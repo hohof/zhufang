@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-// import { connect } from 'dva';
 import PropTypes from 'prop-types'
 import { Marker } from '../../../../react-amap/index'
 import widthMapStatus from '../../../../components/MapWrapper/MapWrapper'
 
-// import styles from './HomeMap.module.scss'
+import styles from './HomeMap.module.scss'
 import cameraMap from '../../../../assets/home/camera-map.png'
 
 const createId = () => Math.floor(Math.random() * 1000000000000)
@@ -67,12 +66,33 @@ const config = {
         clearTimeout(timeId)
       }, 500)
     },
+    click: () => {
+      if (window.infoWindowInstance) {
+        window.infoWindowInstance.hide()
+      }
+    },
   },
 }
 
 class AMap extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      position: null,
+      infoWindowVisible: false,
+    }
+  }
+
+  markerEvent = {
+    click: e => {
+      if (window.infoWindowInstance) {
+        window.infoWindowInstance.show()
+      }
+      this.setState({
+        infoWindowVisible: true,
+        position: e.target.getPosition(),
+      })
+    },
   }
 
   // componentDidUpdate() {
@@ -90,10 +110,30 @@ class AMap extends Component {
             position={item.position}
             anchor="center"
             offset={[0, 5]}
+            events={this.markerEvent}
           >
             <img src={cameraMap} alt="" style={{ display: 'block' }} />
           </Marker>
         ))}
+        {this.state.position ? (
+          <Marker
+            __map__={__map__}
+            offset={[0, 5]}
+            anchor="bottom-center"
+            position={this.state.position}
+            visible={this.state.infoWindowVisible}
+            events={{
+              created: instance => {
+                window.infoWindowInstance = instance
+              },
+            }}
+          >
+            <div className={styles.infoWindowWrapper} style={{ color: '#fff' }}>
+              <p className={styles.cameraAddress}>福建省福州市闽侯县软件园F区6号楼</p>
+              <p className={styles.coverAddress}>覆盖地址：1029个</p>
+            </div>
+          </Marker>
+        ) : null}
       </>
     )
   }
