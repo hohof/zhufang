@@ -1,0 +1,252 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 998;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000, 0.5);
+}
+
+.modalWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  overflow-y: scroll;
+}
+
+.wrapper {
+  position: relative;
+  width: 1024px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #7ae7f8;
+  background-color: #010521;
+}
+
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  height: 100%;
+  padding: 16px;
+  background-color: #011632;
+  h1 {
+    color: #82e9fc;
+    font-size: 16px;
+    line-height: 16px;
+    margin: 0;
+  }
+}
+
+.left {
+  width: 400px;
+  flex-shrink: 0;
+}
+
+.right {
+  flex-shrink: 0;
+  width: 500px;
+}
+
+.result {
+  color: #fff;
+}
+
+.resultPercent {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 130px;
+}
+
+.resultImg {
+  width: 109px;
+  height: 134px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../../../assets/faceWall/result-percent-bg.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  img {
+    display: block;
+    width: 90px;
+    height: 110px;
+    object-fit: contain;
+  }
+}
+
+.percent {
+  position: relative;
+  width: 136px;
+  height: 136px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.percentBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../../assets/faceWall/percent-bg.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.percentContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  span {
+    display: block;
+    font-size: 12px;
+    line-height: 12px;
+    color: #4dc6d7;
+  }
+  h1 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.resultContent {
+  width: 100%;
+  height: 155px;
+  display: flex;
+  align-items: center;
+  margin-top: 19px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 12px;
+  background-image: url('../../../../assets/faceWall/result-content-bg.png');
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.title {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+  text-align: right;
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #65f2f5;
+}
+
+.times {
+  margin-top: 16px;
+}
+
+.line {
+  width: 100%;
+  height: 272px;
+  margin-top: 16px;
+}
+
+.photo {
+  width: 100%;
+  img {
+    margin-top: 16px;
+    display: block;
+    width: 100%;
+    height: 304px;
+  }
+}
+
+.history {
+  margin-top: 16px;
+}
+
+.historyList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 288px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 106px;
+    height: 128px;
+    margin-right: 16px;
+    margin-top: 16px;
+    border: 1px solid #023558;
+    img {
+      display: flex;
+      width: 90px;
+      height: 110px;
+      object-fit: contain;
+    }
+  }
+}
+
+.closeIcon {
+  position: absolute;
+  left: calc(100% - 24px);
+  bottom: calc(100% - 24px);
+  width: 48px;
+  height: 48px;
+  background-image: url('../../../../assets/modal-close.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.animateEnter {
+  opacity: 0;
+}
+.animateEnterActive {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.animateEnterDone {
+  opacity: 1;
+}
+
+.animateExit {
+  opacity: 1;
+}
+.animateExitActive {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.animateExitDone {
+  display: none;
+}

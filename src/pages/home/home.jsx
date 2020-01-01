@@ -11,6 +11,7 @@ import Age from './components/Age/Age'
 import HomeMap from './components/HomeMap/HomeMap'
 import PeopleFaceStatistics from './components/PeopleFaceStatistics/PeopleFaceStatistics'
 import FaceWall from './components/FaceWall/FaceWall'
+import ResultModal from './components/ResultModal/ResultModal'
 
 import styles from './home.module.scss'
 
@@ -59,7 +60,14 @@ class Home extends React.Component {
     this.faceWallImgRef = React.createRef()
     this.state = {
       imgUrl: '',
+      modalVisible: false,
     }
+  }
+
+  modalVisibleChange = () => {
+    this.setState(prevState => ({
+      modalVisible: !prevState.modalVisible,
+    }))
   }
 
   imgClick = () => {
@@ -154,7 +162,7 @@ class Home extends React.Component {
                   <div>覆盖地址：1000个</div>
                 </div>
               </div>
-              <HomeMap />
+              {/*<HomeMap />*/}
             </div>
             <div className={styles.centerBottom}>
               <Age />
@@ -163,9 +171,17 @@ class Home extends React.Component {
           </div>
           <div className={styles.right} onClick={this.imgClick}>
             <PeopleFaceStatistics />
-            <FaceWall ref={this.faceWallImgRef} imgUrl={this.state.imgUrl} />
+            <FaceWall
+              ref={this.faceWallImgRef}
+              imgUrl={this.state.imgUrl}
+              modalVisibleChange={this.modalVisibleChange}
+            />
           </div>
         </div>
+        <ResultModal
+          modalVisible={this.state.modalVisible}
+          modalVisibleChange={this.modalVisibleChange}
+        />
       </>
     )
   }
