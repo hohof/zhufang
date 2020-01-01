@@ -1,32 +1,32 @@
 import React, { Component } from 'react'
 // import { connect } from 'dva';
 import PropTypes from 'prop-types'
-import { Marker, Polyline } from '../../../../react-amap/index'
+import { Marker } from '../../../../react-amap/index'
 import widthMapStatus from '../../../../components/MapWrapper/MapWrapper'
 
-import styles from './HomeMap.module.scss'
+// import styles from './HomeMap.module.scss'
 import cameraMap from '../../../../assets/home/camera-map.png'
 
+const createId = () => Math.floor(Math.random() * 1000000000000)
+
 const cameraPositionList = [
-  [116.860446, 25.429133],
-  [118.068942, 26.888512],
-  [116.860446, 26.613819],
-  [118.530368, 26.712],
-  [117.761325, 27.221171],
-  [118.486423, 25.686827],
-  [116.882419, 25.051512],
-  [118.310641, 24.832355],
-  [119.497165, 26.55487],
-  [118.684177, 26.712],
-  [117.431735, 26.535214],
-  [117.651462, 25.785792],
-  [119.189548, 25.963721],
+  { id: createId(), position: [116.860446, 25.429133] },
+  { id: createId(), position: [116.860446, 26.613819] },
+  { id: createId(), position: [118.530368, 26.712] },
+  { id: createId(), position: [117.761325, 27.221171] },
+  { id: createId(), position: [118.486423, 25.686827] },
+  { id: createId(), position: [116.882419, 25.051512] },
+  { id: createId(), position: [118.310641, 24.832355] },
+  { id: createId(), position: [119.497165, 26.55487] },
+  { id: createId(), position: [118.684177, 26.712] },
+  { id: createId(), position: [117.431735, 26.535214] },
+  { id: createId(), position: [117.651462, 25.785792] },
+  { id: createId(), position: [119.189548, 25.963721] },
 ]
 
 const config = {
   events: {
     created: mapInstance => {
-      console.log(window.AMap)
       window.AMap.plugin(['AMap.DistrictSearch', 'AMap.DistrictLayer'], () => {
         const disProvince = new window.AMap.DistrictLayer.Province({
           zIndex: 12,
@@ -38,7 +38,6 @@ const config = {
             'county-stroke': '', //中国区县边界
           },
         })
-        console.log(disProvince)
         disProvince.setMap(mapInstance)
 
         const opts = {
@@ -76,16 +75,22 @@ class AMap extends Component {
     super(props)
   }
 
-  componentDidUpdate() {
-    console.log('map update')
-  }
+  // componentDidUpdate() {
+  //   console.log('map update')
+  // }
 
   render() {
     const { __map__ } = this.props
     return (
       <>
         {cameraPositionList.map(item => (
-          <Marker key={item} __map__={__map__} position={item} anchor="center" offset={[0, 5]}>
+          <Marker
+            key={item.id}
+            __map__={__map__}
+            position={item.position}
+            anchor="center"
+            offset={[0, 5]}
+          >
             <img src={cameraMap} alt="" style={{ display: 'block' }} />
           </Marker>
         ))}

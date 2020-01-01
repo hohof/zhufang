@@ -137,3 +137,28 @@
   flex-shrink: 0;
   align-items: center;
 }
+
+.cameraScanImg {
+  position: fixed;
+  z-index: 900;
+  transition: all 0.8s linear;
+  transform: scale(0.3);
+  transform-origin: top left;
+  animation-delay: 0.3s;
+  animation-name: cameraScanImgMove;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.9s;
+}
+
+@keyframes cameraScanImgMove {
+  0% {
+    transform: scale(0.3) translateY(0);
+  }
+  50% {
+    transform: scale(0.8) translateY(-100%);
+  }
+  100% {
+    transform: scale(1) translateY(0%);
+  }
+}

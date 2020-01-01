@@ -1,9 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import SubHeader from '../SubHeader/SubHeader'
 
 import styles from './FaceWall.module.scss'
 
-function FaceWall() {
+// eslint-disable-next-line react/display-name
+const FaceWall = React.forwardRef((props, ref) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
@@ -23,7 +25,7 @@ function FaceWall() {
         <h1>对比结果</h1>
         <div className={styles.resultPercent}>
           <div className={styles.resultImg}>
-            <img src="" alt="" />
+            <img ref={ref} src={props.imgUrl} alt="" />
           </div>
           <div className={styles.percent}>
             <div className={styles.percentBg} />
@@ -80,6 +82,10 @@ function FaceWall() {
       </ul>
     </div>
   )
+})
+
+FaceWall.propTypes = {
+  imgUrl: PropTypes.string,
 }
 
 export default FaceWall
