@@ -162,7 +162,7 @@ class Home extends React.Component {
                   <div>覆盖地址：1000个</div>
                 </div>
               </div>
-              {/*<HomeMap />*/}
+              <HomeMap />
             </div>
             <div className={styles.centerBottom}>
               <Age />

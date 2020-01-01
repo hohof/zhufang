@@ -22,64 +22,72 @@ const FaceWall = React.forwardRef((props, ref) => {
         </div>
       </div>
       <div className={styles.result}>
-        <h1>对比结果</h1>
-        <div className={styles.resultPercent}>
-          <div className={styles.resultImg}>
-            <img ref={ref} src={props.imgUrl} alt="" />
-          </div>
-          <div className={styles.percent}>
-            <div className={styles.percentBg} />
-            <div className={styles.percentContent}>
-              <span>相似度</span>
-              <h1>99.2%</h1>
+        <div className={styles.contentWrapper}>
+          <h1>对比结果</h1>
+          <div className={styles.resultPercent}>
+            <div className={styles.resultImg}>
+              <img ref={ref} src={props.imgUrl} alt="" />
+            </div>
+            <div className={styles.percent}>
+              <div className={styles.percentBg} />
+              <div className={styles.percentContent}>
+                <span>相似度</span>
+                <h1>99.2%</h1>
+              </div>
+            </div>
+            <div className={styles.resultImg} onClick={props.modalVisibleChange}>
+              <img src="" alt="" />
             </div>
           </div>
-          <div className={styles.resultImg} onClick={props.modalVisibleChange}>
-            <img src="" alt="" />
+          <div className={styles.resultContent}>
+            <ul className={styles.title}>
+              <li>出现日期：</li>
+              <li>姓名：</li>
+              <li>身份证号码：</li>
+              <li>户籍地址：</li>
+              <li>抓拍设备地址：</li>
+              <li>比对来源：</li>
+            </ul>
+            <ul className={styles.content}>
+              <li>2019/12/18 15:00</li>
+              <li>张**</li>
+              <li>3501**********1231</li>
+              <li>漳平水仙</li>
+              <li>漳平水仙</li>
+              <li>系统比对-居住人库</li>
+            </ul>
           </div>
         </div>
-        <div className={styles.resultContent}>
-          <ul className={styles.title}>
-            <li>出现日期：</li>
-            <li>姓名：</li>
-            <li>身份证号码：</li>
-            <li>户籍地址：</li>
-            <li>抓拍设备地址：</li>
-            <li>比对来源：</li>
-          </ul>
-          <ul className={styles.content}>
-            <li>2019/12/18 15:00</li>
-            <li>张**</li>
-            <li>3501**********1231</li>
-            <li>漳平水仙</li>
-            <li>漳平水仙</li>
-            <li>系统比对-居住人库</li>
-          </ul>
-        </div>
+        <ul className={styles.historyList}>
+          <li>
+            <img src="" alt="" />
+          </li>
+          <li>
+            <img src="" alt="" />
+          </li>
+          <li>
+            <img src="" alt="" />
+          </li>
+          <li>
+            <img src="" alt="" />
+          </li>
+          <li>
+            <img src="" alt="" />
+          </li>
+          <li>
+            <img src="" alt="" />
+          </li>
+          <li>
+            <img src="" alt="" />
+          </li>
+          <li>
+            <img src="" alt="" />
+          </li>
+          <li>
+            <img src="" alt="" />
+          </li>
+        </ul>
       </div>
-      <ul className={styles.historyList}>
-        <li>
-          <img src="" alt="" />
-        </li>
-        <li>
-          <img src="" alt="" />
-        </li>
-        <li>
-          <img src="" alt="" />
-        </li>
-        <li>
-          <img src="" alt="" />
-        </li>
-        <li>
-          <img src="" alt="" />
-        </li>
-        <li>
-          <img src="" alt="" />
-        </li>
-        <li>
-          <img src="" alt="" />
-        </li>
-      </ul>
     </div>
   )
 })
