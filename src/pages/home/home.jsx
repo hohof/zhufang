@@ -169,11 +169,12 @@ class Home extends React.Component {
               <Gender />
             </div>
           </div>
-          <div className={styles.right} onClick={this.imgClick}>
+          <div className={styles.right}>
             <PeopleFaceStatistics />
             <FaceWall
               ref={this.faceWallImgRef}
               imgUrl={this.state.imgUrl}
+              imgClick={this.imgClick}
               modalVisibleChange={this.modalVisibleChange}
             />
           </div>

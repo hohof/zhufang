@@ -25,7 +25,7 @@ const FaceWall = React.forwardRef((props, ref) => {
         <div className={styles.contentWrapper}>
           <h1>对比结果</h1>
           <div className={styles.resultPercent}>
-            <div className={styles.resultImg}>
+            <div className={styles.resultImg} onClick={props.imgClick}>
               <img ref={ref} src={props.imgUrl} alt="" />
             </div>
             <div className={styles.percent}>
@@ -95,6 +95,7 @@ const FaceWall = React.forwardRef((props, ref) => {
 FaceWall.propTypes = {
   imgUrl: PropTypes.string,
   modalVisibleChange: PropTypes.func,
+  imgClick: PropTypes.func,
 }
 
 export default FaceWall
