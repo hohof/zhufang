@@ -2,11 +2,21 @@ import React from 'react'
 import echarts from 'echarts'
 import ReactEcharts from 'echarts-for-react'
 import PropTypes from 'prop-types'
-import { CSSTransition, Transition } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group'
 
 import styles from './ResultModal.module.scss'
 
-const dayDataAxis = ['福州', '泉州', '漳州', '莆田', '厦门', '三明', '南平', '宁德', '龙岩']
+const dayDataAxis = [
+  '2020/1/1 09:10',
+  '2020/1/2 09:10',
+  '2020/1/3 09:10',
+  '2020/1/4 09:10',
+  '2020/1/5 09:10',
+  '2020/1/6 09:10',
+  '2020/1/7 09:10',
+  '2020/1/8 09:10',
+  '2020/1/9 09:10',
+]
 
 const options = {
   title: {
@@ -22,9 +32,6 @@ const options = {
     type: 'category',
     boundaryGap: false,
     data: dayDataAxis,
-    axisLabel: {
-      show: false,
-    },
     axisTick: {
       show: false,
     },
@@ -58,8 +65,8 @@ const options = {
   grid: {
     top: 40,
     right: 30,
-    bottom: 30,
-    left: 35,
+    bottom: 50,
+    left: 50,
   },
 
   series: [
@@ -92,6 +99,29 @@ const options = {
 }
 
 class ResultModal extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      options: options,
+      imgUrl: 'https://i.picsum.photos/id/500/304/184.jpg',
+    }
+  }
+
+  getDetail = () => {
+    this.setState(prevState => ({
+      options: {
+        ...options,
+        series: [
+          {
+            ...prevState.options.series[0],
+            data: prevState.options.series[0].data.map(() => Math.floor(20 * Math.random())),
+          },
+        ],
+      },
+      imgUrl: `https://i.picsum.photos/id/${Math.floor(1000 * Math.random())}/304/184.jpg`,
+    }))
+  }
+
   render() {
     const { modalVisible } = this.props
     return (
@@ -167,49 +197,52 @@ class ResultModal extends React.Component {
                   <div className={styles.times}>
                     <h1>个人出入频数</h1>
                     <div className={styles.line}>
-                      <ReactEcharts option={options} notMerge={true} lazyUpdate={true} />
+                      <ReactEcharts option={this.state.options} notMerge={true} lazyUpdate={true} />
                     </div>
                   </div>
                 </div>
                 <div className={styles.right}>
                   <div className={styles.photo}>
                     <h1>抓拍背景图</h1>
-                    <img src="https://i.picsum.photos/id/500/304/184.jpg" alt="" />
+                    <img src={this.state.imgUrl} alt="" />
                   </div>
                   <div className={styles.history}>
                     <h1>历史记录</h1>
                     <ul className={styles.historyList}>
-                      <li>
+                      <li onClick={this.getDetail}>
                         <img src="" alt="" />
                       </li>
-                      <li>
+                      <li onClick={this.getDetail}>
                         <img src="" alt="" />
                       </li>
-                      <li>
+                      <li onClick={this.getDetail}>
                         <img src="" alt="" />
                       </li>
-                      <li>
+                      <li onClick={this.getDetail}>
                         <img src="" alt="" />
                       </li>
-                      <li>
+                      <li onClick={this.getDetail}>
                         <img src="" alt="" />
                       </li>
-                      <li>
+                      <li onClick={this.getDetail}>
                         <img src="" alt="" />
                       </li>
-                      <li>
+                      <li onClick={this.getDetail}>
                         <img src="" alt="" />
                       </li>
-                      <li>
+                      <li onClick={this.getDetail}>
                         <img src="" alt="" />
                       </li>
-                      <li>
+                      <li onClick={this.getDetail}>
                         <img src="" alt="" />
                       </li>
-                      <li>
+                      <li onClick={this.getDetail}>
                         <img src="" alt="" />
                       </li>
-                      <li>
+                      <li onClick={this.getDetail}>
+                        <img src="" alt="" />
+                      </li>
+                      <li onClick={this.getDetail}>
                         <img src="" alt="" />
                       </li>
                     </ul>
