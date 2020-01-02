@@ -59,31 +59,31 @@ const FaceWall = React.forwardRef((props, ref) => {
           </div>
         </div>
         <ul className={styles.historyList}>
-          <li>
+          <li onClick={props.modalVisibleChange}>
             <img src="" alt="" />
           </li>
-          <li>
+          <li onClick={props.modalVisibleChange}>
             <img src="" alt="" />
           </li>
-          <li>
+          <li onClick={props.modalVisibleChange}>
             <img src="" alt="" />
           </li>
-          <li>
+          <li onClick={props.modalVisibleChange}>
             <img src="" alt="" />
           </li>
-          <li>
+          <li onClick={props.modalVisibleChange}>
             <img src="" alt="" />
           </li>
-          <li>
+          <li onClick={props.modalVisibleChange}>
             <img src="" alt="" />
           </li>
-          <li>
+          <li onClick={props.modalVisibleChange}>
             <img src="" alt="" />
           </li>
-          <li>
+          <li onClick={props.modalVisibleChange}>
             <img src="" alt="" />
           </li>
-          <li>
+          <li onClick={props.modalVisibleChange}>
             <img src="" alt="" />
           </li>
         </ul>

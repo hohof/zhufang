@@ -102,6 +102,7 @@
   width: 136px;
   height: 136px;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
 }
@@ -114,8 +115,10 @@
   height: 100%;
   background-image: url('../../../../assets/faceWall/percent-bg.png');
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  transform-origin: center;
+  animation: percentBgRotate 2s infinite linear;
 }
 
 .percentContent {
@@ -187,11 +190,21 @@
     margin-right: 16px;
     margin-bottom: 16px;
     border: 1px solid #023558;
+    cursor: pointer;
     img {
       display: flex;
       width: 90px;
       height: 110px;
       object-fit: contain;
     }
+  }
+}
+
+@keyframes percentBgRotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
