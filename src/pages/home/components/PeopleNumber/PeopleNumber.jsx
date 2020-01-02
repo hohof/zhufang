@@ -57,7 +57,7 @@ const options = {
     left: 35,
   },
   tooltip: {
-    formatter: '{c}0000人',
+    formatter: params => `${params.value * 10000}人`,
     position: 'top',
     textStyle: {
       color: '#00fffc',

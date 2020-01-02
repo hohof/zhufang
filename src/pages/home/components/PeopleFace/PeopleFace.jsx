@@ -4,7 +4,15 @@ import ReactEcharts from 'echarts-for-react'
 import echarts from 'echarts'
 import styles from './PeopleFace.module.scss'
 
-const dayDataAxis = ['第一天', '第二天', '第三天', '第四天', '第五天', '第六天', '第七天']
+const dayDataAxis = [
+  '2020/1/2',
+  '2020/1/3',
+  '2020/1/4',
+  '2020/1/6',
+  '2020/1/7',
+  '2020/1/8',
+  '2020/1/9',
+]
 const weekDataAxis = ['第一周', '第二周', '第三周', '第四周']
 const monthDataAxis = [
   '第一月',
@@ -93,7 +101,7 @@ const options = {
     left: 35,
   },
   tooltip: {
-    formatter: '{c}0000人',
+    formatter: params => `${params.name}： <br/>${params.value * 10000}人`,
     position: 'top',
     textStyle: {
       color: '#00fffc',
