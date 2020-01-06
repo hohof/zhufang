@@ -52,8 +52,8 @@ const FaceWall = React.forwardRef((props, ref) => {
               <li>2019/12/18 15:00</li>
               <li>张**</li>
               <li>3501**********1231</li>
-              <li>漳平水仙</li>
-              <li>漳平水仙</li>
+              <li>武夷山大红袍</li>
+              <li>武夷山大红袍</li>
               <li>系统比对-居住人库</li>
             </ul>
           </div>
